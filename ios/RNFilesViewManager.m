@@ -1,5 +1,5 @@
 #import "RNFilesViewManager.h"
-#import "RNFilesViewView.h"
+#import "RNFilesView.h"
 
 #import <QuickLook/QuickLook.h>
 
@@ -8,7 +8,7 @@
 RCT_EXPORT_MODULE()
 
 - (UIView *) view  {
-    return [[RNFilesViewView alloc] init];
+    return [[RNFilesView alloc] init];
 }
 
 RCT_EXPORT_VIEW_PROPERTY(urls, NSArray)
