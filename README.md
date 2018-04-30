@@ -9,6 +9,8 @@
 
 `$ react-native link rn-files-view-ios`
 
+In XCode, in the project navigator, select your project. Add `QuickLook.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+
 ### Manual installation
 
 
@@ -16,7 +18,7 @@
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `rn-files-view-ios` and add `RNFilesViewIos.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNFilesViewIos.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+3. In XCode, in the project navigator, select your project. Add `libRNFilesViewIos.a` and `QuickLook.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 
