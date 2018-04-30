@@ -26,7 +26,19 @@ In XCode, in the project navigator, select your project. Add `QuickLook.framewor
 ```javascript
 import RNFilesViewIos from 'rn-files-view-ios';
 
-// TODO: What to do with the module?
-RNFilesViewIos;
+onChangeFile(event) {
+  //The currently visible file
+  const index = event.nativeEvent.index;
+}
+
+render() {
+  return <FilesViewIOS
+								style={{ flex: 1 }}
+								previewBackgroundColor={"#474A5C"}
+								initialIndex={0}
+								urls={["file://pathToFile/myfile1.jpeg", "file://pathToFile/myfile2.pdf", "file://pathToFile/myfile3.docx"]}
+								onFileChange={this.onChangeFile}
+							/>;
+}
 ```
   
