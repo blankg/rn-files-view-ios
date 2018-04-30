@@ -33,12 +33,12 @@ onChangeFile(event) {
 
 render() {
   return <FilesViewIOS
-								style={{ flex: 1 }}
-								previewBackgroundColor={"#474A5C"}
-								initialIndex={0}
-								urls={["file://pathToFile/myfile1.jpeg", "file://pathToFile/myfile2.pdf", "file://pathToFile/myfile3.docx"]}
-								onFileChange={this.onChangeFile}
-							/>;
+		style={{ flex: 1 }}
+		previewBackgroundColor={"#474A5C"}
+		initialIndex={0}
+		urls={["file://pathToFile/myfile1.jpeg", "file://pathToFile/myfile2.pdf", "file://pathToFile/myfile3.docx"]}
+		onFileChange={this.onChangeFile}
+	/>;
 }
 ```
   
