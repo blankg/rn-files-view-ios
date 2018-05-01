@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/rn-files-view-ios.svg)](https://badge.fury.io/js/rn-files-view-ios)
 
 # rn-files-view-ios
 Files viewer component that wraps the iOS QuickLook preview - supports images, pdf, Microsoft office files etc.
