@@ -24,7 +24,7 @@ In XCode, in the project navigator, select your project. Add `QuickLook.framewor
 
 ## Usage
 ```javascript
-import RNFilesViewIos from 'rn-files-view-ios';
+import FilesViewIOS from 'rn-files-view-ios';
 
 onChangeFile(event) {
   //The currently visible file
