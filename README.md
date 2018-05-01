@@ -1,5 +1,10 @@
 
 # rn-files-view-ios
+Files viewer component that wraps the iOS QuickLook preview - supports images, pdf, Microsoft office files etc.
+
+Enables pinch to zoom, double tap and swiping between files.
+
+![](https://media.giphy.com/media/1xVfIzYZ9wt7wD3afK/giphy.gif)
 
 ## Getting started
 
