@@ -90,6 +90,7 @@ static void *changePageContext = &changePageContext;
 - (void)removeFromSuperview {
     [super removeFromSuperview];
     [self.previewCtrl removeObserver:self forKeyPath:@"currentPreviewItemIndex"];
+    [self removeObserver:self forKeyPath:@"onFileChange"];
 }
 
 - (void)setUrls:(NSArray *)urls {
