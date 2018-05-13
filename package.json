@@ -11,7 +11,7 @@
     "url": "git+https://github.com/blankg/rn-files-view-ios.git"
   },
   "keywords": [
-    "react-native"
+    "react-native", "ios", "files", "viewer", "preview", "doc"
   ],
   "author": "Guy Blank",
   "license": "MIT",
