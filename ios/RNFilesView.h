@@ -6,7 +6,6 @@
     NSArray* _urls;
     UIColor* _previewBackgroundColor;
     NSInteger _initialIndex;
-    BOOL _shouldRefreshPreview;
 }
 
 @property (nonatomic, copy) RCTBubblingEventBlock onFileChange;

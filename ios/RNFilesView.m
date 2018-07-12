@@ -51,7 +51,6 @@ static void *changePageContext = &changePageContext;
 
 - (void)initialize {
     _initialIndex = 0;
-    _shouldRefreshPreview = NO;
     self.previewCtrl = [[RNQLPreviewController alloc] init];
     self.previewCtrl.delegate = self;
     self.previewCtrl.dataSource = self;
@@ -67,15 +66,9 @@ static void *changePageContext = &changePageContext;
 {
     if (context == changePageContext)
     {
-        NSLog(@"newValue:%ld",(long)self.previewCtrl.currentPreviewItemIndex);
+        NSLog(@"[RNFilesView] newValue:%ld",(long)self.previewCtrl.currentPreviewItemIndex);
         if (self.onFileChange && self.previewCtrl.currentPreviewItemIndex != NSIntegerMax) {
             self.onFileChange(@{@"index": @(self.previewCtrl.currentPreviewItemIndex)});
-            if (_shouldRefreshPreview) {
-                _shouldRefreshPreview = NO;
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                    [self.previewCtrl refreshCurrentPreviewItem];
-                });
-            }
         }
     }
     else
@@ -91,7 +84,6 @@ static void *changePageContext = &changePageContext;
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.previewView setFrame:self.frame];
-    //    self.previewCtrl.currentPreviewItemIndex = _initialIndex;
 }
 
 - (void)removeFromSuperview {
@@ -102,13 +94,12 @@ static void *changePageContext = &changePageContext;
 
 - (void)setUrls:(NSArray *)urls {
     BOOL shouldRefresh = NO;
-    if (urls.count != _urls.count || ![urls[self.previewCtrl.currentPreviewItemIndex] isEqualToString:_urls[self.previewCtrl.currentPreviewItemIndex]]) {
+    if (urls.count != _urls.count || ![_urls isEqualToArray:urls]) {
         shouldRefresh = YES;
     }
-    else if (![_urls isEqualToArray:urls]) {
-        _shouldRefreshPreview = YES;
-    }
+    
     _urls = urls;
+    
     if (shouldRefresh) {
         [self.previewCtrl refreshCurrentPreviewItem];
     }
