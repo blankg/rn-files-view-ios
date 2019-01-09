@@ -1,6 +1,6 @@
 {
   "name": "rn-files-view-ios",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React Native component to view multiple files in iOS",
   "main": "index.js",
   "scripts": {
