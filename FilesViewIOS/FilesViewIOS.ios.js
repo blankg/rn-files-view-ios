@@ -14,6 +14,7 @@ class FilesViewIOS extends React.Component {
 FilesViewIOS.propTypes = {
   urls: PropTypes.array,
   onFileChange: PropTypes.func,
+  onPreviewFailed: PropTypes.func,
   previewBackgroundColor: PropTypes.string,
   initialIndex: PropTypes.number
 };
