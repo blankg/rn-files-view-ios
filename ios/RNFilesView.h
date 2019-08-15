@@ -9,6 +9,7 @@
 }
 
 @property (nonatomic, copy) RCTBubblingEventBlock onFileChange;
+@property (nonatomic, copy) RCTBubblingEventBlock onPreviewFailed;
 
 @end
   
