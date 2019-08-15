@@ -70,6 +70,9 @@ static void *changePageContext = &changePageContext;
         if (self.onFileChange && self.previewCtrl.currentPreviewItemIndex != NSIntegerMax) {
             self.onFileChange(@{@"index": @(self.previewCtrl.currentPreviewItemIndex)});
         }
+        if (self.onPreviewFailed && ![QLPreviewController canPreviewItem:[NSURL URLWithString:_urls[self.previewCtrl.currentPreviewItemIndex]]]) {
+            self.onPreviewFailed(@{@"url": _urls[self.previewCtrl.currentPreviewItemIndex]});
+        }
     }
     else
     {
@@ -84,6 +87,9 @@ static void *changePageContext = &changePageContext;
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.previewView setFrame:self.frame];
+    if (self.onPreviewFailed && ![QLPreviewController canPreviewItem:[NSURL URLWithString:_urls[self.previewCtrl.currentPreviewItemIndex]]]) {
+        self.onPreviewFailed(@{@"url": _urls[self.previewCtrl.currentPreviewItemIndex]});
+    }
 }
 
 - (void)removeFromSuperview {
