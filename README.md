@@ -39,7 +39,7 @@ onChangeFile(event) {
 
 onPreviewFailed(event) {
   //The failed file url
-  const index = event.nativeEvent.url;
+  const url = event.nativeEvent.url;
 }
 
 render() {
