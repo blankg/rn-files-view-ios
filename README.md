@@ -37,6 +37,11 @@ onChangeFile(event) {
   const index = event.nativeEvent.index;
 }
 
+onPreviewFailed(event) {
+  //The failed file url
+  const index = event.nativeEvent.url;
+}
+
 render() {
   return <FilesViewIOS
 		style={{ flex: 1 }}
@@ -44,6 +49,7 @@ render() {
 		initialIndex={0}
 		urls={["file://pathToFile/myfile1.jpeg", "file://pathToFile/myfile2.pdf", "file://pathToFile/myfile3.docx"]}
 		onFileChange={this.onChangeFile}
+		onPreviewFailed={this.onPreviewFailed}
 	/>;
 }
 ```
